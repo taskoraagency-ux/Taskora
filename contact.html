@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskOra | Work With Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* Global Styles */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#f8faff,#f0f4ff);
+    color:#1a1a1a;
+}
+
+/* Nav Section */
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 60px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-logo img{ height:45px; }
+
+.nav-links{ display:flex; gap:30px; }
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{ color:#1e5eff; }
+
+.cta-nav{
+    background:#1e5eff;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* Main Page Content */
+.page{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.page h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.page p{
+    color:#64748b;
+    margin-bottom:40px;
+    font-size: 1.1rem;
+}
+
+/* THE IMPROVED FORM */
+.form-container {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 24px;
+    text-align: left;
+}
+
+/* Full width for specific fields */
+.full-width {
+    grid-column: span 2;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1.5px solid #e2e8f0;
+    font-size: 15px;
+    background: #fbfcfe;
+    transition: all 0.3s ease;
+}
+
+.form textarea {
+    min-height: 150px;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: #1e5eff;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(30, 94, 255, 0.1);
+}
+
+.form button {
+    grid-column: span 2;
+    background: #1e5eff;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form button:hover {
+    background: #0047cc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 94, 255, 0.2);
+}
+
+#successMessage {
+    display: none;
+    margin-top: 30px;
+    padding: 40px;
+    background: #f0fdf4;
+    color: #166534;
+    border-radius: 20px;
+    border: 1px solid #bbf7d0;
+}
+
+#successMessage i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #22c55e;
+}
+
+/* FOOTER - DO NOT CHANGE */
+footer{
+background:#0f172a;
+color:white;
+padding:50px 20px;
+margin-top:80px;
+}
+
+.footer-content{
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.footer-logo{
+height:45px;
+}
+
+.footer-links{
+display:flex;
+gap:25px;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+opacity:0.8;
+}
+
+.footer-links a:hover{
+opacity:1;
+}
+
+.social-icons{
+display:flex;
+gap:20px;
+font-size:18px;
+}
+
+.social-icons a{
+color:white;
+}
+
+.copyright{
+text-align:center;
+margin-top:20px;
+opacity:0.7;
+font-size:14px;
+}
+
+/* Responsive Fix for form columns */
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    nav { padding: 15px 25px; }
+    .nav-links { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-logo">
+        <a href="index.html">
+            <img src="p3.png" alt="Taskora Logo">
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Work With Us</a>
+    </div>
+
+    <a href="contact.html" class="cta-nav">Get Started</a>
+</nav>
+
+<section class="page">
+    <h1>Work With Us</h1>
+    <p>Partner with TaskOra and experience operational excellence.</p>
+
+    <div class="form-container">
+        <form id="contactForm" class="form">
+            <div class="field-group">
+                <label>Your Name *</label>
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="field-group">
+                <label>Your Email *</label>
+                <input type="email" name="email" placeholder="email@example.com" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label>Company Name</label>
+                <input type="text" name="company" placeholder="Business Name">
+            </div>
+
+            <div class="field-group full-width">
+                <label>Select Service Interest *</label>
+                <select name="service" required>
+                    <option value="" disabled selected>How can we help?</option>
+                    <option value="live_chat">Live Chat Support</option>
+                    <option value="taxi_booking">Taxi Booking & Dispatch</option>
+                    <option value="truck_dispatch">Truck Dispatching</option>
+                    <option value="phone_support">Phone Support</option>
+                    <option value="admin_tasks">Administrative Tasks</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="field-group full-width">
+                <label>Project Details *</label>
+                <textarea name="message" placeholder="Tell us about your volume and current challenges..." required></textarea>
+            </div>
+
+            <button type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Submit Request
+            </button>
+        </form>
+
+        <div id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You!</h3>
+            <p>We’ve received your request. A member of our team will contact you within 48 hours.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <img class="footer-logo" src="p5.png" alt="Taskora Logo">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+       <div class="social-icons">
+            <a href="#"target="_blank"rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/taskcore.agency?igsh=dGJucmx0OGR5Nzl0"target="_blank"rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585545254687"target="_blank"rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2026 TaskOra Outsourcing Agency. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+const form = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMessage');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    
+    // Simulate loading
+    const btn = form.querySelector('button');
+    btn.innerHTML = "Sending...";
+    btn.style.opacity = "0.7";
+    
+    setTimeout(() => {
+        form.style.display = "none";
+        successMsg.style.display = "block";
+        successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 1000);
+});
+</script>
+
+</body>
+</html>

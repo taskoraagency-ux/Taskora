@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCore | Elite Outsourcing Solutions</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #004aad;
+            --primary-dark: #061121;
+            --accent: #00d4ff;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        /* NAVIGATION */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 8%; background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); box-shadow: var(--shadow-sm);
+        }
+
+        .nav-logo img { height: 40px; transition: var(--transition); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--primary); }
+
+        .cta-nav {
+            background: var(--primary); color: #fff !important; padding: 12px 24px;
+            border-radius: 12px; font-weight: 700; box-shadow: 0 4px 14px 0 rgba(0,74,173,0.39);
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 160px 10% 120px; text-align: center;
+            background: #061121; color: #fff; position: relative; overflow: hidden;
+        }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px; border-radius: 50px; font-size: 0.7rem; font-weight: 800;
+            letter-spacing: 2px; margin-bottom: 30px; display: inline-block;
+        }
+        .hero h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 25px; line-height: 1.1; }
+        .hero p { max-width: 680px; margin: 0 auto 45px; font-size: 1.2rem; color: #cbd5e1; }
+
+        /* FEATURES (REDESIGNED) */
+        .features-header { padding: 100px 10% 40px; text-align: center; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 10% 100px; }
+        
+        .feature {
+            padding: 50px 35px; border-radius: 24px; background: var(--white);
+            border: 1px solid rgba(0,0,0,0.03); transition: var(--transition);
+            box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+        }
+        .feature:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .feature-icon {
+            width: 60px; height: 60px; background: rgba(0, 74, 173, 0.05);
+            color: var(--primary); display: flex; align-items: center; justify-content: center;
+            border-radius: 18px; font-size: 1.8rem; margin-bottom: 25px; transition: var(--transition);
+        }
+        .feature:hover .feature-icon { background: var(--primary); color: #fff; transform: scale(1.1); }
+        .feature h3 { margin-bottom: 15px; font-weight: 700; font-size: 1.3rem; }
+        .feature p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .feature-link { 
+            color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.85rem; 
+            display: flex; align-items: center; gap: 5px; opacity: 0; transform: translateX(-10px); transition: var(--transition);
+        }
+        .feature:hover .feature-link { opacity: 1; transform: translateX(0); }
+
+        /* PROCESS */
+        .how-it-works { padding: 100px 10%; background: #fff; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .step { text-align: center; padding: 40px 20px; }
+        .step-number {
+            width: 50px; height: 50px; background: var(--primary-dark); color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-weight: 800;
+        }
+
+        /* STATS SECTION (RE-ADDED) */
+        .stats {
+            background: var(--primary-dark); display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            padding: 80px 10%; text-align: center; color: #fff;
+        }
+        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--accent); display: block; }
+        .stat-label { font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.8rem; opacity: 0.7; }
+
+        /* FOOTER */
+        footer { background: #030a14; color: #fff; text-align: center; padding: 60px 10% 30px; font-size: 0.85rem; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        .footer-logo { height: 40px; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { color: #ccc; font-size: 1.2rem; transition: var(--transition); }
+        .social-icons a:hover { color: var(--accent); }
+        .copyright { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); width: 100%; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="p3.png" alt="Taskora Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Work With Us</a>
+        </div>
+        <a href="contact.html" class="cta-nav">Get Started</a>
+    </nav>
+
+    <header class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <span class="hero-badge">ELITE OUTSOURCING SOLUTIONS</span>
+            <h1>Scale Operations.<br>Reduce Costs.</h1>
+            <p>Industry-trained support teams designed for fast-moving companies ready to dominate their market.</p>
+            <div class="hero-actions">
+                <a href="contact.html" class="cta-nav" style="padding: 18px 40px; font-size: 1.1rem;">Explore Our Solutions</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features-header">
+        <h2>Premium Support Verticals</h2>
+        <p>Specialized expertise for high-stakes industries.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+            <h3>Live Chat Support</h3>
+            <p>24/7 real-time agents trained to resolve issues and drive conversions instantly.</p>
+            <a href="services.html" class="feature-link">View Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="feature">
+            <div class="feature-icon"><i class="fas fa-taxi"></i></div>
+            <h3>Taxi Dispatch</h3>
+            <p>Global dispatch coordination for high-volume transportation networks.</p>
+            <a href="services.html" class="feature-link">View Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="feature">
+            <div class="feature-icon"><i class="fas fa-truck"></i></div>
+            <h3>Logistics Hub</h3>
+            <p>Experienced load managers and driver coordinators for the trucking industry.</p>
+            <a href="services.html" class="feature-link">View Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="feature">
+            <div class="feature-icon"><i class="fas fa-phone-alt"></i></div>
+            <h3>Omnichannel Care</h3>
+            <p>Seamless management across phone, email, and social support channels.</p>
+            <a href="services.html" class="feature-link">View Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    
+    <section class="how-it-works">
+        <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 800;">Our Excellence Framework</h2>
+        <div class="steps">
+            <div class="step"><div class="step-number">01</div><h3>Audit</h3><p>Deep dive into your current operational bottlenecks.</p></div>
+            <div class="step"><div class="step-number">02</div><h3>Deploy</h3><p>We handpick elite talent trained in your specific tools.</p></div>
+            <div class="step"><div class="step-number">03</div><h3>Sync</h3><p>Real-time integration with your internal workflows.</p></div>
+            <div class="step"><div class="step-number">04</div><h3>Scale</h3><p>Continuous optimization to drive down cost-per-ticket.</p></div>
+        </div>
+    </section>
+
+<footer>
+    <div class="footer-content">
+        <img class="footer-logo" src="p5.png" alt="Taskora Logo">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+       <div class="social-icons">
+            <a href="#"target="_blank"rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/taskcore.agency?igsh=dGJucmx0OGR5Nzl0"target="_blank"rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585545254687"target="_blank"rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2026 TaskOra Outsourcing Agency. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00d4ff" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.2 },
+                "move": { "enable": true, "speed": 2 }
+            },
+            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.textContent.replace(/\D/g,''));
+                    let count = 0;
+                    const timer = setInterval(() => {
+                        count += target / 60;
+                        if (count >= target) {
+                            el.textContent = (el.textContent.includes('%') ? target + '%' : el.textContent.includes('+') ? target + '+' : target);
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(count);
+                        }
+                    }, 20);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-number').forEach(n => observer.observe(n));
+    </script>
+</body>
+</html>

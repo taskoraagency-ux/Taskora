@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCore | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e5eff;
+            --primary-dark: #1a1a1a;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --pure-black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #fcfdfe;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation Style Consistency */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo img { height: 45px; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.current { color: var(--primary); }
+        .cta-nav { background: var(--primary); color: white !important; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+
+        /* Hero Section */
+        .about-hero {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            /* Changed from gradient to Black */
+            color: var(--pure-black);
+            margin-bottom: 20px;
+        }
+
+        .lead-text {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* Mission & Values Grid */
+        .content-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .mission-box {
+            background: #f8faff;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #eef2ff;
+        }
+
+        .mission-box h2 {
+            /* Changed from Primary Blue to Black */
+            color: var(--pure-black);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .value-card i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .value-card h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: var(--pure-black);
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Stats Section Enhancements */
+        .stats-enhanced {
+            background: var(--text-dark);
+            color: white;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-number-enhanced {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .stat-label-enhanced {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .content-section { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            nav { padding: 15px 30px; }
+            .stats-enhanced { gap: 30px; }
+        }
+
+        /* FOOTER PRESERVATION */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 0;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-logo { height: 45px; }
+        .footer-links { display: flex; gap: 25px; }
+        .footer-links a { color: white; text-decoration: none; opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; }
+        .social-icons { display: flex; gap: 20px; font-size: 18px; }
+        .social-icons a { color: white; }
+        .copyright { text-align: center; margin-top: 20px; opacity: 0.7; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="p3.png" alt="TaskCore Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" class="current">About</a>
+            <a href="contact.html">Work With Us</a>
+        </div>
+        <a href="contact.html" class="cta-nav">Get Started</a>
+    </nav>
+
+    <header class="about-hero">
+        <h1>About TaskOra</h1>
+        <p class="lead-text">
+            We are a premium outsourcing agency providing highly trained virtual professionals to fast-growing businesses worldwide.
+        </p>
+    </header>
+
+    <section class="content-section">
+        <div class="mission-box">
+            <h2>Our Mission</h2>
+            <p>To empower businesses by providing scalable, cost-effective, and high-quality support services that allow them to focus on core growth strategies. We combine process intelligence, elite talent, and strict quality control to deliver measurable operational impact.</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Integrity</h4>
+                <p>Operating with full transparency in every partnership.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-star"></i>
+                <h4>Excellence</h4>
+                <p>Setting the gold standard for outsourced support.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h4>Partnership</h4>
+                <p>We succeed only when our clients succeed.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Impact</h4>
+                <p>Driving real results through data and dedication.</p>
+            </div>
+        </div>
+    </section>
+<footer>
+    <div class="footer-content">
+        <img class="footer-logo" src="p5.png" alt="Taskora Logo">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+       <div class="social-icons">
+            <a href="#"target="_blank"rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/taskcore.agency?igsh=dGJucmx0OGR5Nzl0"target="_blank"rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585545254687"target="_blank"rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2026 TaskOra Outsourcing Agency. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script>
+        const observerOptions = { threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const stat = entry.target;
+                    const endVal = parseInt(stat.getAttribute('data-val'));
+                    let startVal = 0;
+                    const duration = 1500;
+                    const step = endVal / (duration / 16);
+
+                    const animate = () => {
+                        startVal += step;
+                        if(startVal < endVal) {
+                            stat.innerText = Math.floor(startVal) + (endVal === 99 || endVal === 40 ? '%' : (endVal === 50 ? '+' : ''));
+                            requestAnimationFrame(animate);
+                        } else {
+                            stat.innerText = endVal + (endVal === 99 || endVal === 40 ? '%' : (endVal === 50 ? '+' : ''));
+                        }
+                    };
+                    animate();
+                    observer.unobserve(stat);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number-enhanced').forEach(el => observer.observe(el));
+    </script>
+    <style>
+    /* REDESIGNED CARDS SECTION */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        padding: 40px 10% 100px;
+        background: var(--bg);
+    }
+
+    .feature {
+        position: relative;
+        padding: 60px 40px 45px;
+        background: #ffffff;
+        border-radius: 30px;
+        border: 1px solid rgba(0, 74, 173, 0.08);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Left aligned for a professional look */
+        text-align: left;
+        overflow: hidden;
+    }
+
+    /* Decorative background element that appears on hover */
+    .feature::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+        transition: all 0.6s ease;
+        z-index: 0;
+    }
+
+    .feature:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 30px 60px rgba(0, 74, 173, 0.12);
+        border-color: var(--primary);
+    }
+
+    .feature:hover::before {
+        top: -20%;
+        right: -20%;
+    }
+
+    /* Icon redesign: Floating Glass Style */
+    .feature-icon {
+        position: relative;
+        z-index: 1;
+        width: 65px;
+        height: 65px;
+        background: var(--primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 74, 173, 0.2);
+        transition: all 0.4s ease;
+    }
+
+    .feature:hover .feature-icon {
+        transform: scale(1.1) rotate(-5deg);
+        background: var(--primary-dark);
+        box-shadow: 0 15px 30px rgba(6, 17, 33, 0.3);
+    }
+
+    .feature h3 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .feature p {
+        position: relative;
+        z-index: 1;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Interactive "Learn More" link */
+    .feature-link {
+        position: relative;
+        z-index: 1;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.4s ease;
+    }
+
+    .feature:hover .feature-link {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .feature-link i {
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    .feature:hover .feature-link i {
+        transform: translateX(5px);
+    }
+</style>
+
+</body>
+</html>
