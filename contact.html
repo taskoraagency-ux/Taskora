@@ -7,6 +7,166 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+      /* MOBILE OPTIMIZATION */
+@media (max-width:768px){
+
+nav{
+padding:12px 20px;
+}
+.nav-links{
+display:flex;
+gap:15px;
+font-size:14px;
+}
+
+.cta-nav{
+padding:10px 16px;
+font-size:0.85rem;
+}
+
+.hero{
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:2.2rem;
+letter-spacing:-1px;
+}
+
+.hero p{
+font-size:1rem;
+padding:0 10px;
+}
+
+.features-header{
+padding:60px 20px 20px;
+}
+
+.features{
+padding:0 20px 60px;
+gap:20px;
+}
+
+.feature{
+padding:30px 20px;
+}
+
+.how-it-works{
+padding:60px 20px;
+}
+
+.steps{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+.stats{
+padding:60px 20px;
+}
+
+.stat-number{
+font-size:2.5rem;
+}
+
+footer{
+padding:40px 20px 20px;
+}
+
+.footer-links{
+flex-direction:column;
+gap:10px;
+}
+
+}
+    /* ---------- MOBILE FIX + RESPONSIVE IMAGES ---------- */
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* MOBILE RESPONSIVE FIX */
+@media (max-width:768px){
+
+nav{
+padding:12px 20px;
+}
+
+.nav-links{
+display:none;
+}
+
+.cta-nav{
+padding:10px 16px;
+font-size:0.85rem;
+}
+
+/* HERO FIX */
+.hero{
+padding:110px 20px 70px;
+}
+
+.hero h1{
+font-size:2.2rem;
+line-height:1.2;
+}
+
+.hero p{
+font-size:1rem;
+padding:0 10px;
+}
+
+/* FEATURES */
+.features-header{
+padding:60px 20px 20px;
+}
+
+.features{
+padding:0 20px 60px;
+gap:20px;
+}
+
+.feature{
+padding:30px 20px;
+}
+
+/* SERVICES GRID */
+.grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.card{
+padding:25px;
+}
+
+/* PROCESS SECTION */
+.steps{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+/* STATS */
+.stats{
+padding:60px 20px;
+}
+
+.stat-number{
+font-size:2.4rem;
+}
+
+/* FOOTER */
+footer{
+padding:40px 20px 20px;
+}
+
+.footer-links{
+flex-direction:column;
+gap:10px;
+}
+
+}
 /* Global Styles */
 *{
     margin:0;
